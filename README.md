@@ -1,2 +1,2 @@
-# Abp.Elk
-Abp ELK (Elasticsearch + Logstash + Kibana) module.
+# Abp.Elasticsearch
+Abp Elasticsearch module.
