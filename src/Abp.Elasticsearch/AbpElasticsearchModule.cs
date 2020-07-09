@@ -8,6 +8,7 @@ namespace Abp.Elasticsearch
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
+            context.Services.AddSingleton<IElasticsearchSettings, ElasticsearchSettings>();
             context.Services.AddSingleton<IElasticsearchDatabaseProvider, ElasticsearchDatabaseProvider>();
         }
     }
