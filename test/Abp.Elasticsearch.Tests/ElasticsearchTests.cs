@@ -7,7 +7,7 @@ namespace Abp.Elasticsearch.Tests
     public class ElasticsearchTests
     {
         [Fact]
-        public void GetClient()
+        public void Elasticsearch_Service_Test()
         {
             var service = GetElasticsearchService();
 
