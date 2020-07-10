@@ -6,7 +6,7 @@ using Volo.Abp.DependencyInjection;
 
 namespace Abp.Elasticsearch
 {
-    public interface IElasticsearch : ITransientDependency
+    public interface IElasticsearchService : ITransientDependency
     {
         /// <summary>
         /// CreateEsIndex Not Mapping

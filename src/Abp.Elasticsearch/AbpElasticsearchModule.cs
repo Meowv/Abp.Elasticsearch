@@ -11,7 +11,7 @@ namespace Abp.Elasticsearch
 
             Configure<ElasticsearchOptions>(configuration.GetSection("Elasticsearch"));
 
-            context.Services.AddSingleton<IElasticsearch, AbpElasticsearch>();
+            context.Services.AddSingleton<IElasticsearchService, AbpElasticsearchService>();
         }
     }
 }

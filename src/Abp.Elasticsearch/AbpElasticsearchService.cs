@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Abp.Elasticsearch
 {
-    public class AbpElasticsearch : IElasticsearch
+    public class AbpElasticsearchService : IElasticsearchService
     {
         protected ElasticsearchOptions ElasticsearchOptions { get; }
 
         public IElasticClient ElasticClient { get; set; }
 
-        public AbpElasticsearch(IOptions<ElasticsearchOptions> options)
+        public AbpElasticsearchService(IOptions<ElasticsearchOptions> options)
         {
             ElasticsearchOptions = options.Value;
             ElasticClient = GetClient();
