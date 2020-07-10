@@ -1,5 +1,4 @@
-﻿using Abp.Elasticsearch.Elasticsearch;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.Modularity;
 
 namespace Abp.Elasticsearch
@@ -8,8 +7,11 @@ namespace Abp.Elasticsearch
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            context.Services.AddSingleton<IElasticsearchSettings, ElasticsearchSettings>();
-            context.Services.AddSingleton<IElasticsearchDatabaseProvider, ElasticsearchDatabaseProvider>();
+            var configuration = context.Services.GetConfiguration();
+
+            Configure<ElasticsearchOptions>(configuration.GetSection("Elasticsearch"));
+
+            context.Services.AddSingleton<IElasticsearch, AbpElasticsearch>();
         }
     }
 }
